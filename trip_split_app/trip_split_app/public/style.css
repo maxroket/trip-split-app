@@ -1,0 +1,289 @@
+/*
+ * Основные стили для приложения учёта совместных расходов.
+ * Цветовая палитра подобрана в оттенках синего, серого и белого, чтобы
+ * напоминать о море, небе и путешествиях.  Стили написаны так, чтобы
+ * интерфейс оставался адаптивным и хорошо выглядел как на мобильных
+ * устройствах, так и на десктопах.
+ */
+
+/* Цветовые переменные */
+:root {
+  --color-primary: #1e88e5; /* насыщенный синий */
+  --color-secondary: #90caf9; /* светлый голубой */
+  --color-accent: #1565c0; /* тёмно‑синий */
+  --color-light: #f5faff; /* очень светлый фон */
+  --color-dark: #0a2342; /* глубокий тёмно‑синий */
+  --color-success: #2e7d32; /* зелёный для положительного баланса */
+  --color-danger: #c62828; /* красный для отрицательного баланса */
+  --color-text: #0c1f38; /* основной текст */
+  --border-radius: 6px;
+  --transition-fast: 0.2s ease;
+}
+
+/* Сброс базовых стилей */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-light);
+  color: var(--color-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Заголовок сайта */
+.main-header {
+  background: linear-gradient(rgba(14, 40, 80, 0.6), rgba(14, 40, 80, 0.6)), url('/public/img/travel_bg.png') center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.main-header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+}
+
+/* Основной контейнер */
+.app-container {
+  flex: 1;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem 1rem;
+}
+
+/* Карточки */
+.card {
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.card h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  color: var(--color-primary);
+}
+
+/* Кнопки */
+.btn {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color var(--transition-fast);
+}
+
+.btn:hover {
+  background-color: var(--color-accent);
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-dark);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.btn-danger {
+  background-color: var(--color-danger);
+  color: #fff;
+}
+
+/* Формы */
+form {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="date"],
+form select {
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  min-width: 120px;
+}
+
+form input[type="number"] {
+  max-width: 120px;
+}
+
+/* Таблицы */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table thead {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+table th, table td {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Список долгов/балансов */
+.balances {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.balance-item {
+  flex: 1 1 120px;
+  padding: 0.6rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+}
+
+.balance-positive {
+  background-color: var(--color-success);
+}
+
+.balance-negative {
+  background-color: var(--color-danger);
+}
+
+.balance-zero {
+  background-color: var(--color-secondary);
+  color: var(--color-dark);
+}
+
+/* Бар‑чарт для наглядного отображения балансов */
+.bar-chart {
+  width: 100%;
+  margin-top: 1rem;
+  height: 200px;
+  position: relative;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius);
+  background-color: #fff;
+  display: flex;
+  align-items: flex-end;
+  padding: 0.5rem;
+  overflow-x: auto;
+}
+
+.bar {
+  flex: 1;
+  margin: 0 0.25rem;
+  position: relative;
+  min-width: 40px;
+}
+
+.bar span {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  white-space: nowrap;
+  margin-bottom: 0.2rem;
+}
+
+.bar .bar-inner {
+  width: 100%;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  transition: height var(--transition-fast);
+}
+
+/* Матрица долгов */
+.matrix-table {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.matrix-table table td.clickable {
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.matrix-table table td.clickable:hover {
+  background-color: var(--color-secondary);
+}
+
+/* Модальное окно */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity var(--transition-fast);
+  z-index: 1000;
+}
+
+.modal.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  width: 90%;
+  max-width: 400px;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+  .card {
+    padding: 0.8rem;
+  }
+  .main-header h1 {
+    font-size: 1.5rem;
+  }
+  table th, table td {
+    font-size: 0.75rem;
+    padding: 0.35rem;
+  }
+}

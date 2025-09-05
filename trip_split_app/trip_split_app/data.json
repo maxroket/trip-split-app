@@ -1,0 +1,94 @@
+{
+  "trips": [
+    {
+      "id": "trip_mf5oc7u8_bvgx3",
+      "name": "Тестовая поездка",
+      "location": "Москва",
+      "start_date": "2025-09-03",
+      "end_date": "2025-09-03",
+      "participants": [
+        {
+          "id": "p_mf5ocel8_bssuv",
+          "name": "Иван"
+        },
+        {
+          "id": "p_mf5ochud_1vsjw",
+          "name": "Мария"
+        }
+      ],
+      "expenses": [
+        {
+          "id": "e_mf5oclb5_2qc7e",
+          "payer_id": "p_mf5ocel8_bssuv",
+          "amount": 1000,
+          "description": "Обед",
+          "date": "2025-09-03",
+          "shares": [
+            {
+              "participant_id": "p_mf5ocel8_bssuv",
+              "amount": 500
+            },
+            {
+              "participant_id": "p_mf5ochud_1vsjw",
+              "amount": 500
+            }
+          ]
+        }
+      ],
+      "transfers": [
+        {
+          "id": "t_mf5ocr0r_jkfes",
+          "from_id": "p_mf5ochud_1vsjw",
+          "to_id": "p_mf5ocel8_bssuv",
+          "amount": 500,
+          "date": "2025-09-04"
+        }
+      ]
+    },
+    {
+      "id": "trip_mf5odhvu_nixqh",
+      "name": "Поездка2",
+      "location": "",
+      "start_date": "2025-09-04",
+      "end_date": "2025-09-04",
+      "participants": [
+        {
+          "id": "p_mf5odjn1_7fhpv",
+          "name": "А"
+        },
+        {
+          "id": "p_mf5odlkx_orpdg",
+          "name": "B"
+        }
+      ],
+      "expenses": [
+        {
+          "id": "e_mf5odr3a_q0qch",
+          "payer_id": "p_mf5odjn1_7fhpv",
+          "amount": 100,
+          "description": "Тест",
+          "date": "2025-09-04",
+          "shares": [
+            {
+              "participant_id": "p_mf5odjn1_7fhpv",
+              "amount": 50
+            },
+            {
+              "participant_id": "p_mf5odlkx_orpdg",
+              "amount": 50
+            }
+          ]
+        }
+      ],
+      "transfers": [
+        {
+          "id": "t_mf5odwtm_5gn4o",
+          "from_id": "p_mf5odlkx_orpdg",
+          "to_id": "p_mf5odjn1_7fhpv",
+          "amount": 50,
+          "date": "2025-09-05"
+        }
+      ]
+    }
+  ]
+}
