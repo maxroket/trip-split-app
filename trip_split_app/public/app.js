@@ -29,7 +29,11 @@
     const list = document.createElement('ul');
     trips.forEach(t => {
       const li = document.createElement('li');
-      li.textContent = `${t.title || 'Без названия'} — ${t.location || ''}`;
+      const a = document.createElement('a');
+a.href = `./trip.html?id=${t.id}`;
+a.textContent = `${t.title || 'Без названия'} — ${t.location || ''}`;
+li.appendChild(a);
+
       list.appendChild(li);
     });
 
