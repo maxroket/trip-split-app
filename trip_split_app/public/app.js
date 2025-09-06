@@ -29,7 +29,7 @@
     const list = document.createElement('ul');
     trips.forEach(t => {
       const li = document.createElement('li');
-      li.textContent = `${t.name || 'Без названия'} — ${t.location || ''}`;
+      li.textContent = `${t.title || 'Без названия'} — ${t.location || ''}`;
       list.appendChild(li);
     });
 
