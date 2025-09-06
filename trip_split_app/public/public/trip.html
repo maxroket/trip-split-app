@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Детали поездки</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="main-header">
+    <h1 id="trip-title">Поездка</h1>
+  </header>
+
+  <main id="app" class="app-container">
+    <p>Загружаем данные…</p>
+  </main>
+
+  <!-- Библиотека Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- ВАЖНО: те же две строки конфигурации, что в index.html -->
+  <script>
+    window.SUPABASE_URL = "https://cewelnjomfwurpslksca.supabase.co";
+    window.SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNld2VsbmpvbWZ3dXJwc2xrc2NhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcwNjg5NjEsImV4cCI6MjA3MjY0NDk2MX0.S2AG5wdlsMAUhXlIfwtih7nJv3FE0asfqpZszpJEqKY";
+  </script>
+
+  <script src="./trip.js" defer></script>
+</body>
+</html>
